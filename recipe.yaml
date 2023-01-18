@@ -169,41 +169,6 @@ tasks:
     search: '"level": "silly"'
     replace: '"level": "error"'
 
-  ## pefcl
-  - action: download_file
-    url: https://github.com/project-error/pefcl/releases/latest/download/pefcl.zip
-    path: ./tmp/pefcl.zip
-  - action: unzip
-    src: ./tmp/pefcl.zip
-    dest: ./resources/[pe]
-
-  - action: unzip
-    src: ./tmp/pefcl.zip
-    dest: ./resources/[pe]
-
-  - action: query_database
-    file: ./resources/[pe]/pefcl/import.sql
-
-  - action: replace_string
-    file: ./resources/[pe]/pefcl/config.json
-    search: '"level": "silly"'
-    replace: '"level": "error"'
-
-  - action: replace_string
-    file: ./resources/[pe]/pefcl/config.json
-    search: '"enabled": "false"'
-    replace: '"enabled": "true"'
-
-  - action: replace_string
-    file: ./resources/[pe]/pefcl/config.json
-    search: '"resource": "your-resource"'
-    replace: '"resource": "ox_inventory"'
-
-  - action: replace_string
-    file: ./resources/[pe]/pefcl/config.json
-    search: '"syncInitialBankBalance": "true"'
-    replace: '"syncInitialBankBalance": "false"'
-
   ## pma-voice
   - action: download_github
     src: https://github.com/AvarianKnight/pma-voice
